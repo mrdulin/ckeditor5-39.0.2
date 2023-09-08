@@ -147,6 +147,9 @@ class Editor extends ClassicEditor {
     simpleUpload: {
       uploadUrl: 'http://localhost:5000/upload',
     },
+    highlight: {
+      keystroke: 'Ctrl+Alt+H',
+    },
     language: 'zh-cn',
     heading: {
       options: [

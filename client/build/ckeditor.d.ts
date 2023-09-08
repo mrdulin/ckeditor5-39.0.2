@@ -37,6 +37,9 @@ declare class Editor extends ClassicEditor {
         simpleUpload: {
             uploadUrl: string;
         };
+        highlight: {
+            keystroke: string;
+        };
         language: string;
         heading: any;
         fontFamily: {

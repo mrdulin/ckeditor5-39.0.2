@@ -36,6 +36,12 @@ export function Highlight(editor: Editor) {
 
   editor.commands.add('highlight', new HighlightCommand(editor));
 
+  // default config
+  editor.config.define('highlight', {
+    keystroke: 'Ctrl+Alt+H',
+  });
+  const keystroke = editor.config.get('highlight.keystroke') as string;
+
   // ui
   editor.ui.componentFactory.add('highlight', (locale) => {
     const button = new ButtonView(locale);
@@ -47,6 +53,7 @@ export function Highlight(editor: Editor) {
       withText: true,
       tooltip: true,
       isToggleable: true,
+      keystroke,
     });
 
     button.on('execute', () => {
@@ -58,4 +65,7 @@ export function Highlight(editor: Editor) {
 
     return button;
   });
+
+  // keystrokes
+  editor.keystrokes.set(keystroke, 'highlight');
 }
