@@ -7,7 +7,7 @@ ClassicEditor.create(document.querySelector('.editor'), {
   .then((editor) => {
     window.editor = editor;
     CKEditorInspector.attach(editor);
-    editor.setData('<p>Hello <mark>world</mark>!</p>');
+    // editor.setData('<p>Hello <mark>world</mark>!</p>');
 
     const $output = document.getElementById('output-html');
 
