@@ -35,7 +35,7 @@ import { Table, TableCaption, TableCellProperties, TableColumnResize, TablePrope
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
-import { Highlight } from './plugins/highlight';
+import { Highlight } from './plugins/highlight/highlight-editor';
 
 class Editor extends ClassicEditor {
   public static override builtinPlugins = [
