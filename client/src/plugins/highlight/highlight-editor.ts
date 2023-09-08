@@ -1,4 +1,5 @@
 import { Editor } from 'ckeditor5/src/core';
+import { ButtonView } from 'ckeditor5/src/ui';
 import { HighlightCommand } from './highlight-command';
 
 export function Highlight(editor: Editor) {
@@ -34,4 +35,27 @@ export function Highlight(editor: Editor) {
   });
 
   editor.commands.add('highlight', new HighlightCommand(editor));
+
+  // ui
+  editor.ui.componentFactory.add('highlight', (locale) => {
+    const button = new ButtonView(locale);
+    const command = editor.commands.get('highlight');
+    const t = editor.t;
+
+    button.set({
+      label: t('Highlight'),
+      withText: true,
+      tooltip: true,
+      isToggleable: true,
+    });
+
+    button.on('execute', () => {
+      editor.execute('highlight');
+      editor.editing.view.focus();
+    });
+
+    button.bind('isOn', 'isEnabled').to(command as any, 'value', 'isEnabled');
+
+    return button;
+  });
 }

@@ -32,6 +32,7 @@ declare class Editor extends ClassicEditor {
     static defaultConfig: {
         toolbar: {
             items: string[];
+            shouldNotGroupWhenFull: boolean;
         };
         simpleUpload: {
             uploadUrl: string;

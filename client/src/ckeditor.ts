@@ -140,7 +140,9 @@ class Editor extends ClassicEditor {
         '|',
         'undo',
         'redo',
+        'highlight',
       ],
+      shouldNotGroupWhenFull: true,
     },
     simpleUpload: {
       uploadUrl: 'http://localhost:5000/upload',

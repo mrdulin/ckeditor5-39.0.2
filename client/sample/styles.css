@@ -8,7 +8,7 @@
 	--ck-sample-color-white: #fff;
 	--ck-sample-color-green: #279863;
 	--ck-sample-color-blue: #1a9aef;
-	--ck-sample-container-width: 1285px;
+	--ck-sample-container-width: 1024px;
 	--ck-sample-sidebar-width: 350px;
 	--ck-sample-editor-min-height: 400px;
 	--ck-sample-editor-z-index: 10;
@@ -45,12 +45,14 @@ main .ck-editor[role='application'] .ck.ck-content,
 }
 
 .editor-container {
-	display: flex;
+	/* display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	position: relative;
 	width: 100%;
-	justify-content: center;
+	justify-content: center; */
+	max-width: 1024px;
+	margin: 0 auto;
 }
 
 .editor-container--with-sidebar > .ck.ck-editor {
@@ -58,41 +60,41 @@ main .ck-editor[role='application'] .ck.ck-content,
 }
 
 /* --------- DECOUPLED (DOCUMENT) BUILD. ---------------------------------------------*/
-body[data-editor='DecoupledEditor'] .document-editor__toolbar {
+/* body[data-editor='DecoupledEditor'] .document-editor__toolbar {
 	width: 100%;
-}
-
+} */
+/*
 body[data-editor='DecoupledEditor'] .collaboration-demo__editable,
-body[data-editor='DecoupledEditor'] .row-editor .editor {
+body[data-editor='DecoupledEditor'] .row-editor .editor { */
 	/* A pixel is added for each of the border. */
-	width: calc(21cm + 2px);
-	min-height: calc(29.7cm + 2px);
+	/* width: calc(21cm + 2px);
+	min-height: calc(29.7cm + 2px); */
 	/* To avoid having extra scrolls inside the editor container. */
-	height: fit-content;
+	/* height: fit-content;
 	padding: 2cm 1.2cm;
 	margin: 2.5rem;
 	border: 1px hsl( 0, 0%, 82.7% ) solid;
 	background-color: var(--ck-sample-color-white);
 	box-shadow: 0 0 5px hsla( 0, 0%, 0%, .1 );
 	box-sizing: border-box;
-}
+} */
 
-body[data-editor='DecoupledEditor'] .row-editor {
+/* body[data-editor='DecoupledEditor'] .row-editor {
 	display: flex;
 	position: relative;
 	justify-content: center;
 	overflow-y: auto;
 	background-color: #f2f2f2;
-	border: 1px solid hsl(0, 0%, 77%);
+	border: 1px solid hsl(0, 0%, 77%); */
 	/* Limit the max-height of the editor to avoid scrolling from bottom to top to see the toolbar. */
-	max-height: 700px;
-}
+	/* max-height: 700px;
+} */
 
-body[data-editor='DecoupledEditor'] .sidebar {
+/* body[data-editor='DecoupledEditor'] .sidebar {
 	background: transparent;
 	border: 0;
 	box-shadow: none;
-}
+} */
 
 /* --------- COMMENTS & TRACK CHANGES FEATURE ---------------------------------------------------------------------- */
 .sidebar {
