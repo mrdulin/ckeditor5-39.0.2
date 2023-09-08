@@ -6,7 +6,6 @@ import { Autoformat } from '@ckeditor/ckeditor5-autoformat';
 import { Autosave } from '@ckeditor/ckeditor5-autosave';
 import { Bold, Code, Italic, Strikethrough, Underline } from '@ckeditor/ckeditor5-basic-styles';
 import { BlockQuote } from '@ckeditor/ckeditor5-block-quote';
-import { CloudServices } from '@ckeditor/ckeditor5-cloud-services';
 import { Essentials } from '@ckeditor/ckeditor5-essentials';
 import { FindAndReplace } from '@ckeditor/ckeditor5-find-and-replace';
 import { FontBackgroundColor, FontColor, FontFamily, FontSize, Font } from '@ckeditor/ckeditor5-font';
@@ -36,6 +35,7 @@ import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
 import { Highlight } from './plugins/highlight/highlight';
+import LineHeight from './plugins/line-height/lineheight';
 
 class Editor extends ClassicEditor {
   public static override builtinPlugins = [
@@ -46,7 +46,6 @@ class Editor extends ClassicEditor {
     Autosave,
     BlockQuote,
     Bold,
-    CloudServices,
     Code,
     DataFilter,
     DataSchema,
@@ -100,6 +99,7 @@ class Editor extends ClassicEditor {
     WordCount,
     SimpleUploadAdapter,
     Highlight,
+    LineHeight,
   ];
 
   public static override defaultConfig = {
@@ -141,6 +141,7 @@ class Editor extends ClassicEditor {
         'undo',
         'redo',
         'highlight',
+        'lineHeight',
       ],
       shouldNotGroupWhenFull: true,
     },
@@ -150,6 +151,7 @@ class Editor extends ClassicEditor {
     highlight: {
       keystroke: 'Ctrl+Alt+H',
     },
+
     language: 'zh-cn',
     heading: {
       options: [

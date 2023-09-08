@@ -11,7 +11,7 @@ export class HighlightUI extends Plugin {
       const keystroke = this.editor.config.get('highlight.keystroke') as string;
 
       button.set({
-        label: t('Highlight'),
+        label: t('高亮'),
         withText: true,
         tooltip: true,
         isToggleable: true,
