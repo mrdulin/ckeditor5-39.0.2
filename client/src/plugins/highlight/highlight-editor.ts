@@ -1,5 +1,5 @@
-import { Editor } from 'ckeditor5/src/core';
-import { ButtonView } from 'ckeditor5/src/ui';
+import { Editor } from '@ckeditor/ckeditor5-core';
+import { ButtonView } from '@ckeditor/ckeditor5-ui';
 import { HighlightCommand } from './highlight-command';
 
 export function Highlight(editor: Editor) {
