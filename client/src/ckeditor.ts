@@ -35,6 +35,7 @@ import { Table, TableCaption, TableCellProperties, TableColumnResize, TablePrope
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
+import { Highlight } from './plugins/highlight';
 
 class Editor extends ClassicEditor {
   public static override builtinPlugins = [
@@ -98,6 +99,7 @@ class Editor extends ClassicEditor {
     UploadAdapter,
     WordCount,
     SimpleUploadAdapter,
+    Highlight,
   ];
 
   public static override defaultConfig = {
@@ -105,6 +107,7 @@ class Editor extends ClassicEditor {
       items: [
         'heading',
         '|',
+        'fontFamily',
         'fontSize',
         'fontColor',
         'fontBackgroundColor',
@@ -154,6 +157,9 @@ class Editor extends ClassicEditor {
         { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' },
       ],
     } as any,
+    fontFamily: {
+      options: ['default', '宋体', '仿宋', '楷体', '微软雅黑', '黑体', '华文楷体', '华文行楷', ''],
+    },
     fontSize: {
       options: [9, 10, 11, 12, 14, 16, 18, 20, 24, 26, 28],
       supportAllValues: true,

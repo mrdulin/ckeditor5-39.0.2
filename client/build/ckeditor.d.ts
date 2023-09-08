@@ -1,7 +1,3 @@
-/**
- * @license Copyright (c) 2014-2023, CKSource Holding sp. z o.o. All rights reserved.
- * For licensing, see LICENSE.md or https://ckeditor.com/legal/ckeditor-oss-license
- */
 import { ClassicEditor } from '@ckeditor/ckeditor5-editor-classic';
 import { UploadAdapter } from '@ckeditor/ckeditor5-adapter-ckfinder';
 import { Alignment } from '@ckeditor/ckeditor5-alignment';
@@ -30,8 +26,9 @@ import { Table, TableCaption, TableCellProperties, TableColumnResize, TablePrope
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
 import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
+import { Highlight } from './plugins/highlight';
 declare class Editor extends ClassicEditor {
-    static builtinPlugins: (typeof Alignment | typeof AutoImage | typeof AutoLink | typeof Autoformat | typeof Autosave | typeof BlockQuote | typeof Bold | typeof CloudServices | typeof Code | typeof DataFilter | typeof DataSchema | typeof Essentials | typeof FindAndReplace | typeof Font | typeof FontBackgroundColor | typeof FontColor | typeof FontFamily | typeof FontSize | typeof GeneralHtmlSupport | typeof Heading | typeof HorizontalLine | typeof HtmlComment | typeof HtmlEmbed | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof IndentBlock | typeof Italic | typeof Link | typeof LinkImage | typeof List | typeof ListProperties | typeof Paragraph | typeof PasteFromOffice | typeof RemoveFormat | typeof SpecialCharacters | typeof SpecialCharactersArrows | typeof SpecialCharactersCurrency | typeof SpecialCharactersEssentials | typeof SpecialCharactersLatin | typeof SpecialCharactersMathematical | typeof SpecialCharactersText | typeof StandardEditingMode | typeof Strikethrough | typeof Table | typeof TableCaption | typeof TableCellProperties | typeof TableColumnResize | typeof TableProperties | typeof TableToolbar | typeof TextTransformation | typeof Underline | typeof UploadAdapter | typeof WordCount | typeof SimpleUploadAdapter)[];
+    static builtinPlugins: (typeof Alignment | typeof AutoImage | typeof AutoLink | typeof Autoformat | typeof Autosave | typeof BlockQuote | typeof Bold | typeof CloudServices | typeof Code | typeof DataFilter | typeof DataSchema | typeof Essentials | typeof FindAndReplace | typeof Font | typeof FontBackgroundColor | typeof FontColor | typeof FontFamily | typeof FontSize | typeof GeneralHtmlSupport | typeof Heading | typeof HorizontalLine | typeof HtmlComment | typeof HtmlEmbed | typeof Image | typeof ImageCaption | typeof ImageInsert | typeof ImageResize | typeof ImageStyle | typeof ImageToolbar | typeof ImageUpload | typeof Indent | typeof IndentBlock | typeof Italic | typeof Link | typeof LinkImage | typeof List | typeof ListProperties | typeof Paragraph | typeof PasteFromOffice | typeof RemoveFormat | typeof SpecialCharacters | typeof SpecialCharactersArrows | typeof SpecialCharactersCurrency | typeof SpecialCharactersEssentials | typeof SpecialCharactersLatin | typeof SpecialCharactersMathematical | typeof SpecialCharactersText | typeof StandardEditingMode | typeof Strikethrough | typeof Table | typeof TableCaption | typeof TableCellProperties | typeof TableColumnResize | typeof TableProperties | typeof TableToolbar | typeof TextTransformation | typeof Underline | typeof UploadAdapter | typeof WordCount | typeof SimpleUploadAdapter | typeof Highlight)[];
     static defaultConfig: {
         toolbar: {
             items: string[];
@@ -41,6 +38,9 @@ declare class Editor extends ClassicEditor {
         };
         language: string;
         heading: any;
+        fontFamily: {
+            options: string[];
+        };
         fontSize: {
             options: number[];
             supportAllValues: boolean;
