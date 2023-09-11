@@ -98,7 +98,7 @@ class Editor extends ClassicEditor {
     UploadAdapter,
     WordCount,
     SimpleUploadAdapter,
-    Highlight,
+    // Highlight,
     LineHeight,
   ];
 
@@ -145,13 +145,9 @@ class Editor extends ClassicEditor {
       ],
       shouldNotGroupWhenFull: true,
     },
-    simpleUpload: {
-      uploadUrl: 'http://localhost:5000/upload',
-    },
-    highlight: {
-      keystroke: 'Ctrl+Alt+H',
-    },
-
+    // highlight: {
+    //   keystroke: 'Ctrl+Alt+H',
+    // },
     language: 'zh-cn',
     heading: {
       options: [
