@@ -9,7 +9,7 @@ ClassicEditor.create(document.querySelector('.editor'), {
     CKEditorInspector.attach(editor);
     // editor.setData('<p>Hello <mark>world</mark>!</p>');
 
-    const $output = document.getElementById('output-html');
+    const $output = document.getElementById('output-content');
 
     editor.model.document.on('change:data', () => {
       $output.innerHTML = editor.getData();

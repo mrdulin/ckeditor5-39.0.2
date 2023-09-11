@@ -7,6 +7,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+		.output-container {
+			max-width: 1024px;
+			margin: 20px auto;
+		}
+
+		.output-content {
+			border: 1px solid #ddd;
+			min-height: 300px;
+			padding: 20px;
+		}
+
+		.output-content img {
+			width: 100%;
+		}
+	</style>
 </head>
 
 <body data-editor="ClassicEditor" data-collaboration="false" data-revision-history="false">
@@ -20,9 +36,9 @@
 	<!-- </div> -->
 	<!-- </div> -->
 
-	<div style="max-width: 1024px; margin: 20px auto;">
-		<h3>输出:</h3>
-		<div id="output-html" style="border: 1px solid #ddd; min-height: 300px;">
+	<div class="output-container">
+		<h3>预览:</h3>
+		<div id="output-content" class="output-content">
 
 		</div>
 	</div>
