@@ -6,17 +6,31 @@ ClassicEditor.create(document.querySelector('.editor'), {
   simpleUpload: {
     uploadUrl: 'http://192.168.10.197:5000/upload',
   },
+  // wordCount: {
+  //   onUpdate: stats => {
+
+  //   }
+  // }
 })
   .then((editor) => {
     window.editor = editor;
-    CKEditorInspector.attach(editor);
     // editor.setData('<p>Hello <mark>world</mark>!</p>');
 
-    const $output = document.getElementById('output-content');
+    // 调试工具
+    CKEditorInspector.attach(editor);
 
+
+    // 输出HTML用于预览
+    const $output = document.getElementById('output-content');
     editor.model.document.on('change:data', () => {
       $output.innerHTML = editor.getData();
     });
+
+    // 字数
+    // const wordCountPlugin = editor.plugins.get('WordCount');
+    // const wordCountWrapper = document.getElementById('word-count');
+
+    // wordCountWrapper.appendChild(wordCountPlugin.wordCountContainer);
   })
   .catch(handleSampleError);
 

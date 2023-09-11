@@ -140,7 +140,7 @@ class Editor extends ClassicEditor {
         '|',
         'undo',
         'redo',
-        'highlight',
+        // 'highlight',
         'lineHeight',
       ],
       shouldNotGroupWhenFull: true,

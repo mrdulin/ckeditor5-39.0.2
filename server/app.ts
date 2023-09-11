@@ -24,7 +24,13 @@ app.get('/ok', (req, res) => {
 });
 app.post('/upload', (req, res) => {
   upload(req, res, (err) => {
-    if (err || !req.file) return res.json({ error: { message: 'image upload failed' } });
+    if (err) {
+      console.error(err);
+      return res.json({ error: { message: 'image upload failed' } });
+    }
+    if (!req.file) {
+      return res.sendStatus(500);
+    }
     // console.log(req.headers)
     res.json({
       url: `http://${req.headers.host}/uploads/${req.file.filename}`,
