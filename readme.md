@@ -54,6 +54,12 @@ PS C:\WINDOWS\system32> netsh advfirewall firewall add rule name="Allowing LAN c
 PS C:\WINDOWS\system32> netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=172.30.189.223
 ```
 
+同时还需要设置图片上传服务可以被局域网访问，图片上传服务的端口为`5000`
+
+```ps
+PS C:\WINDOWS\system32> netsh interface portproxy add v4tov4 listenport=5000 listenaddress=0.0.0.0 connectport=5000 connectaddress=172.30.189.223
+```
+
 找到局域网IP
 
 ```ps
