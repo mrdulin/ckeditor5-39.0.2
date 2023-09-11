@@ -54,11 +54,17 @@ PS C:\WINDOWS\system32> netsh advfirewall firewall add rule name="Allowing LAN c
 PS C:\WINDOWS\system32> netsh interface portproxy add v4tov4 listenport=8080 listenaddress=0.0.0.0 connectport=8080 connectaddress=172.30.189.223
 ```
 
-同时还需要设置图片上传服务可以被局域网访问，图片上传服务的端口为`5000`
+同时还需要设置图片上传服务可以被局域网访问，图片上传服务的端口为`5000`。注意设置新的rule name，与上面的rule name不同。
+
+```ps
+PS C:\WINDOWS\system32> netsh advfirewall firewall add rule name="Allowing LAN connections for server" dir=in action=allow protocol=TCP localport=5000
+确定。
 
 ```ps
 PS C:\WINDOWS\system32> netsh interface portproxy add v4tov4 listenport=5000 listenaddress=0.0.0.0 connectport=5000 connectaddress=172.30.189.223
 ```
+
+可以在windows 11 - 设置 - 防火墙与网络保护 - 允许应用进行通信中查看上述防火墙规则
 
 找到局域网IP
 
