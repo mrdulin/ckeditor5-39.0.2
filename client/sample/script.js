@@ -1,3 +1,27 @@
+const updateAutoSaveStatus = () => {
+  const pendingActions = editor.plugins.get('PendingActions');
+  const $autosave = document.getElementById('autosave');
+
+  pendingActions.on('change:hasAny', (evt, propertyName, newValue) => {
+    if (newValue) {
+      // statusIndicator.classList.add('busy');
+      $autosave.textContent = '自动保存中...';
+    } else {
+      // statusIndicator.classList.remove('busy');
+      $autosave.textContent = '';
+    }
+  });
+};
+
+function saveData(data) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('Saved', data);
+      resolve();
+    }, 1000);
+  });
+}
+
 ClassicEditor.create(document.querySelector('.editor'), {
   // Editor configuration.
   lineHeight: {
@@ -11,6 +35,13 @@ ClassicEditor.create(document.querySelector('.editor'), {
 
   //   }
   // }
+  autosave: {
+    waitingTime: 5000,
+    save(editor) {
+      const data = editor.getData();
+      return saveData(data);
+    },
+  },
 })
   .then((editor) => {
     window.editor = editor;
@@ -18,7 +49,6 @@ ClassicEditor.create(document.querySelector('.editor'), {
 
     // 调试工具
     CKEditorInspector.attach(editor);
-
 
     // 输出HTML用于预览
     const $output = document.getElementById('output-content');
@@ -31,6 +61,9 @@ ClassicEditor.create(document.querySelector('.editor'), {
     // const wordCountWrapper = document.getElementById('word-count');
 
     // wordCountWrapper.appendChild(wordCountPlugin.wordCountContainer);
+
+    // 更新编辑器自动保存状态
+    updateAutoSaveStatus(editor);
   })
   .catch(handleSampleError);
 

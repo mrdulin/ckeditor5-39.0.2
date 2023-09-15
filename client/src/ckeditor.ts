@@ -33,8 +33,8 @@ import {
 import { Table, TableCaption, TableCellProperties, TableColumnResize, TableProperties, TableToolbar } from '@ckeditor/ckeditor5-table';
 import { TextTransformation } from '@ckeditor/ckeditor5-typing';
 import { WordCount } from '@ckeditor/ckeditor5-word-count';
-import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
-import { Highlight } from './plugins/highlight/highlight';
+// import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
+// import { Highlight } from './plugins/highlight/highlight';
 import LineHeight from './plugins/line-height/lineheight';
 
 class Editor extends ClassicEditor {
@@ -97,7 +97,7 @@ class Editor extends ClassicEditor {
     Underline,
     UploadAdapter,
     WordCount,
-    SimpleUploadAdapter,
+    // SimpleUploadAdapter,
     // Highlight,
     LineHeight,
   ];
