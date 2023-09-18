@@ -33,6 +33,9 @@ ClassicEditor.create(document.querySelector('.editor'), {
   axiosUpload: {
     url: 'http://localhost:5000/upload',
   },
+  // dmAxiosUpload: {
+  //   url: ''
+  // },
   // wordCount: {
   //   onUpdate: stats => {
 
