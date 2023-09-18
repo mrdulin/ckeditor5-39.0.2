@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
     cb(null, filename);
   },
 });
-const upload = multer({ storage: storage }).single('upload');
+const upload = multer({ storage: storage }).single('files');
 
 app.use(cors());
 app.use('/uploads', express.static('uploads'));
@@ -24,6 +24,8 @@ app.get('/ok', (req, res) => {
 });
 app.post('/upload', (req, res) => {
   upload(req, res, (err) => {
+    // console.log('req.file: ', req.file);
+    // console.log('req.files: ', req.files);
     if (err) {
       console.error(err);
       return res.json({ error: { message: 'image upload failed' } });
@@ -32,8 +34,13 @@ app.post('/upload', (req, res) => {
       return res.sendStatus(500);
     }
     // console.log(req.headers)
+    // res.json({
+    //   url: `http://${req.headers.host}/uploads/${req.file.filename}`,
+    // });
     res.json({
-      url: `http://${req.headers.host}/uploads/${req.file.filename}`,
+      code: 0,
+      data: [{ sentimentFileUrl: `http://${req.headers.host}/uploads/${req.file.filename}` }],
+      message: '',
     });
   });
 });

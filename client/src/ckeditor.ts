@@ -36,6 +36,7 @@ import { WordCount } from '@ckeditor/ckeditor5-word-count';
 // import { SimpleUploadAdapter } from '@ckeditor/ckeditor5-upload';
 // import { Highlight } from './plugins/highlight/highlight';
 import LineHeight from './plugins/line-height/lineheight';
+import AxiosUploadPlugin from './plugins/axios-upload';
 
 class Editor extends ClassicEditor {
   public static override builtinPlugins = [
@@ -98,6 +99,7 @@ class Editor extends ClassicEditor {
     UploadAdapter,
     WordCount,
     // SimpleUploadAdapter,
+    AxiosUploadPlugin,
     // Highlight,
     LineHeight,
   ];

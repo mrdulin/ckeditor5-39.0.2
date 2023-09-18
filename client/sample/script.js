@@ -27,8 +27,11 @@ ClassicEditor.create(document.querySelector('.editor'), {
   lineHeight: {
     options: [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.5, 3.5],
   },
-  simpleUpload: {
-    uploadUrl: 'http://192.168.10.197:5000/upload',
+  // simpleUpload: {
+  //   uploadUrl: 'http://192.168.10.197:5000/upload',
+  // },
+  axiosUpload: {
+    url: 'http://localhost:5000/upload',
   },
   // wordCount: {
   //   onUpdate: stats => {
