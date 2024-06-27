@@ -21,6 +21,7 @@ import { Paragraph } from '@ckeditor/ckeditor5-paragraph';
 import { PasteFromOffice } from '@ckeditor/ckeditor5-paste-from-office';
 import { RemoveFormat } from '@ckeditor/ckeditor5-remove-format';
 import { StandardEditingMode } from '@ckeditor/ckeditor5-restricted-editing';
+import { Style } from '@ckeditor/ckeditor5-style';
 import {
   SpecialCharacters,
   SpecialCharactersArrows,
@@ -104,11 +105,13 @@ class Editor extends ClassicEditor {
     DMAxiosUploadPlugin,
     // Highlight,
     LineHeight,
+    Style,
   ];
 
   public static override defaultConfig = {
     toolbar: {
       items: [
+        'style',
         'heading',
         '|',
         'fontFamily',
@@ -169,13 +172,26 @@ class Editor extends ClassicEditor {
     },
     fontSize: {
       options: [9, 10, 11, 12, 14, 16, 18, 20, 24, 26, 28],
-      supportAllValues: true,
     },
     image: {
       toolbar: ['imageTextAlternative', 'toggleImageCaption', 'imageStyle:inline', 'imageStyle:block', 'imageStyle:side', 'linkImage'],
     },
     table: {
       contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableCellProperties', 'tableProperties'],
+    },
+    style: {
+      definitions: [
+        // {
+        //   name: '引用样式的标题',
+        //   element: 'blockquote',
+        //   classes: ['fs-normal'],
+        // },
+        {
+          name: '引用样式的标题',
+          element: 'h1',
+          classes: ['blockquote'],
+        },
+      ],
     },
   };
 }
