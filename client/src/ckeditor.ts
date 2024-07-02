@@ -181,16 +181,16 @@ class Editor extends ClassicEditor {
     },
     style: {
       definitions: [
-        // {
-        //   name: '引用样式的标题',
-        //   element: 'blockquote',
-        //   classes: ['fs-normal'],
-        // },
         {
-          name: '引用样式的标题',
-          element: 'h1',
-          classes: ['blockquote'],
+          name: '正常字体样式的引用元素',
+          element: 'blockquote',
+          classes: ['fs-normal'],
         },
+        ...['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].map((elName) => ({
+          name: `引用样式的标题元素${elName}`,
+          element: elName,
+          classes: ['blockquote'],
+        })),
       ],
     },
   };
